@@ -23,7 +23,7 @@ public class EnvioMensaje {
 		try {
 			canal.queueDeclare(QUEUE_NAME, false, false, false, null);
 
-			for (int i = 0; i < 15; ++i) {
+			for (int i = 0; i <100; ++i) {
 				String message = String.format("Hola, enviando mensaje RabbitMQ",
 						LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME));
 				canal.basicPublish("", QUEUE_NAME, null, message.getBytes());
